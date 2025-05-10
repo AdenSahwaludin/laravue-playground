@@ -19,8 +19,6 @@ class BelajarController extends Controller
     }
     public function sayHello()
     {
-        return inertia('SayHello', [
-            'name' => 'Aden Sahwaludin',
-        ]);
+        return inertia('SayHello');
     }
 }

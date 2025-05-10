@@ -40,7 +40,7 @@ const increment = () => {
             <p>Count {{ state.count }}</p>
             <Button @Click="increment">Increment Count</Button>
             <!--  -->
-            <Link class="m-auto" :href="route('dashboard')">Ke Dashboard</Link>
+            <Link class="m-auto" :href="route('belajar.say-hello')">Ke Dashboard</Link>
 
             <p>Kamu adalah {{ props.user.name }}</p>
             <ul>
