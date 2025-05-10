@@ -2,7 +2,7 @@
 import Button from '@/components/ui/button/Button.vue';
 import AppLayout from '@/layouts/AppLayout.vue';
 import { Head, Link } from '@inertiajs/vue3';
-import { reactive, ref } from 'vue';
+import { ref } from 'vue';
 
 const props = defineProps({
     user: Object,
@@ -14,7 +14,7 @@ const state = ref({
     count: 0,
 });
 
-const breadcrumbs = reactive([
+const breadcrumbs = ref([
     {
         title: 'Belajar',
         href: '/belajar',
@@ -40,7 +40,7 @@ const increment = () => {
             <p>Count {{ state.count }}</p>
             <Button @Click="increment">Increment Count</Button>
             <!--  -->
-            <Link class="m-auto" :href="route('belajar.say-hello')">Ke Dashboard</Link>
+            <Link class="m-auto" :href="route('belajar.say-hello')">Ke say hello</Link>
 
             <p>Kamu adalah {{ props.user.name }}</p>
             <ul>
