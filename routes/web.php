@@ -18,6 +18,8 @@ Route::get('dashboard', function () {
 Route::middleware(['auth', 'verified'])->prefix('belajar')->group(function () {
     Route::get('/', [BelajarController::class, 'index'])->name('belajar');
     Route::get('say-hello', [BelajarController::class, 'sayHello'])->name('belajar.say-hello');
+    Route::get('style', [BelajarController::class, 'style'])->name('belajar.style');
+    Route::get('score', [BelajarController::class, 'score'])->name('belajar.score');
 });
 
 Route::middleware('auth')->group(function () {

@@ -1,7 +1,7 @@
 <script setup>
 import Button from '@/components/ui/button/Button.vue';
 import AppLayout from '@/layouts/AppLayout.vue';
-import { Head, Link } from '@inertiajs/vue3';
+import { Head } from '@inertiajs/vue3';
 import { ref } from 'vue';
 
 const props = defineProps({
@@ -40,8 +40,24 @@ const increment = () => {
             <p>Count {{ state.count }}</p>
             <Button @Click="increment">Increment Count</Button>
             <!--  -->
-            <Link class="m-auto" :href="route('belajar.say-hello')">Ke say hello</Link>
-
+            <div class="flex w-full flex-col gap-4 md:flex-row">
+                <div class="w-full">
+                    <Button as="a" :href="route('belajar.say-hello')" class="mr-2 w-full cursor-pointer hover:cursor-pointer"
+                        >Pergi ke Say Hello
+                    </Button>
+                </div>
+                <div class="w-full">
+                    <Button as="a" :href="route('belajar.style')" class="w-full cursor-pointer hover:cursor-pointer">Pergi ke Style </Button>
+                </div>
+            </div>
+            <div class="flex w-full flex-col gap-4 md:flex-row">
+                <div class="w-full">
+                    <Button as="a" :href="route('belajar.score')" class="mr-2 w-full cursor-pointer hover:cursor-pointer">Pergi ke Score</Button>
+                </div>
+                <div class="w-full">
+                    <Button as="a" :href="route('belajar')" class="w-full cursor-pointer hover:cursor-pointer">Pergi ke </Button>
+                </div>
+            </div>
             <p>Kamu adalah {{ props.user.name }}</p>
             <ul>
                 List semua user:

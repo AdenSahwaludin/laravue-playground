@@ -1,7 +1,7 @@
 <script setup>
 import AppLayout from '@/layouts/AppLayout.vue';
 import { Head } from '@inertiajs/vue3';
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 
 const breadcrumbs = ref([
     {
@@ -30,14 +30,14 @@ const click = () => {
     state.value.lastName = document.getElementById('lastName').value;
 };
 
-const fullName = () => {
-    console.log('fullName called');
+const fullName = computed((oldName) => {
+    console.log('Old name' + oldName);
     return `${state.value.firstName} ${state.value.lastName}`;
-};
+});
 </script>
 
 <template>
-    <Head title="Belajar" />
+    <Head title="Say Hello" />
     <AppLayout :breadcrumbs="breadcrumbs">
         <div class="dark:bg-sidebar m-4 bg-gray-100 p-4">
             <div class="flex flex-col md:flex-row">
@@ -48,7 +48,7 @@ const fullName = () => {
                         <input id="firstName" type="text" placeholder="First Name" class="rounded border p-2" />
                         <input id="lastName" type="text" placeholder="Last Name" class="rounded border p-2" />
                         <button @click="click" class="rounded bg-white px-4 py-2 text-black">Click</button>
-                        <p class="m-auto text-2xl">Hello {{ fullName() }}</p>
+                        <p class="m-auto text-2xl">Hello {{ fullName }}</p>
                     </div>
                 </div>
                 <!-- Right column (50%) -->

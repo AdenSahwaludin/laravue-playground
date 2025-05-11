@@ -21,4 +21,8 @@ class BelajarController extends Controller
     {
         return inertia('SayHello');
     }
+    public function style()
+    {
+        return inertia('Style');
+    }
 }
