@@ -69,7 +69,7 @@ const academicStanding = computed(() => {
 </script>
 
 <template>
-    <Head title="Say Hello" />
+    <Head title="Score" />
     <AppLayout :breadcrumbs="breadcrumbs">
         <div class="dark:bg-sidebar m-4 bg-gray-100 p-4">
             <div class="flex flex-col md:flex-row">
