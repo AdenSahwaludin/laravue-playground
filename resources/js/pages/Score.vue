@@ -3,7 +3,7 @@ import AppLayout from '@/layouts/AppLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import { computed, ref } from 'vue';
 
-const name = 'Aden Sahwaludin';
+const names = 'Aden Sahwaludin';
 const breadcrumbs = ref([
     {
         title: 'Belajar',
