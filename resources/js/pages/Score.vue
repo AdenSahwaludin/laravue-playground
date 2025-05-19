@@ -52,9 +52,7 @@ const academicStanding = computed(() => {
     // Satisfactory: Average performance overall
     else if ((score >= 70 && attendance >= 75) || (score >= 65 && homework && participation >= 6)) {
         return { status: 'Satisfactory', color: 'text-yellow-600' };
-    }
-    // Warning: Poor performance in multiple areas
-    else if (score < 60 || attendance < 70 || (!homework && participation < 5)) {
+    } else if (score < 60 || attendance < 70 || (!homework && participation < 5)) {
         return { status: 'Academic Warning', color: 'text-red-600' };
     }
     // Probation: Very poor performance overall
