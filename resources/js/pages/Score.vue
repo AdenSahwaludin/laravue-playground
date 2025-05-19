@@ -3,11 +3,7 @@ import AppLayout from '@/layouts/AppLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import { computed, ref } from 'vue';
 
-const props = defineProps({
-    user: Object,
-    users: Array,
-});
-
+const name = 'Aden Sahwaludin';
 const breadcrumbs = ref([
     {
         title: 'Belajar',
