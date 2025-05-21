@@ -20,6 +20,8 @@ Route::middleware(['auth', 'verified'])->prefix('belajar')->group(function () {
     Route::get('say-hello', [BelajarController::class, 'sayHello'])->name('belajar.say-hello');
     Route::get('style', [BelajarController::class, 'style'])->name('belajar.style');
     Route::get('score', [BelajarController::class, 'score'])->name('belajar.score');
+    Route::get('todolist', [BelajarController::class, 'todolist'])->name('belajar.todolist');
+
 });
 
 Route::middleware('auth')->group(function () {

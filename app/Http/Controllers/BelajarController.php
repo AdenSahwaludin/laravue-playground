@@ -25,4 +25,9 @@ class BelajarController extends Controller
     {
         return inertia('Style');
     }
+    public function score()
+    {
+        return inertia('Score');
+    }
+
 }
