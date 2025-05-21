@@ -55,7 +55,7 @@ const increment = () => {
                     <Button as="a" :href="route('belajar.score')" class="mr-2 w-full cursor-pointer hover:cursor-pointer">Pergi ke Score</Button>
                 </div>
                 <div class="w-full">
-                    <Button as="a" :href="route('todolist')" class="w-full cursor-pointer hover:cursor-pointer">Pergi ke ToDoList</Button>
+                    <Button as="a" :href="route('belajar.todolist')" class="w-full cursor-pointer hover:cursor-pointer">Pergi ke ToDoList</Button>
                 </div>
             </div>
             <p>Kamu adalah {{ props.user.name }}</p>

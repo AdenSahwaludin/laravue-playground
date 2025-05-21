@@ -3,36 +3,32 @@ import AppLayout from '@/layouts/AppLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import { computed, ref } from 'vue';
 
-const breadcrumbs = ref([
-    {
-        title: 'Belajar',
-        href: '/belajar',
-    },
-    {
-        title: 'Say Hello',
-        href: '/belajar/say-hello',
-    },
-]);
+// Breadcrumb navigasi
+const breadcrumbs = [
+    { title: 'Belajar', href: '/belajar' },
+    { title: 'Say Hello', href: '/belajar/say-hello' },
+];
 
-const state = ref({
-    count: 0,
+// State utama
+const count = ref(0);
+const form = ref({
+    firstName: '',
+    lastName: '',
+});
+const submitted = ref({
     firstName: '',
     lastName: '',
 });
 
-const incrementCount = () => {
-    console.log('incrementCount called');
-    state.value.count++;
+// Handler untuk tombol submit
+const handleSubmit = () => {
+    submitted.value.firstName = form.value.firstName;
+    submitted.value.lastName = form.value.lastName;
 };
 
-const click = () => {
-    state.value.firstName = document.getElementById('firstName').value;
-    state.value.lastName = document.getElementById('lastName').value;
-};
-
-const fullName = computed((oldName) => {
-    console.log('Old name' + oldName);
-    return `${state.value.firstName} ${state.value.lastName}`;
+// Nama lengkap setelah submit
+const fullName = computed(() => {
+    return `${submitted.value.firstName} ${submitted.value.lastName}`.trim();
 });
 </script>
 
@@ -41,17 +37,18 @@ const fullName = computed((oldName) => {
     <AppLayout :breadcrumbs="breadcrumbs">
         <div class="dark:bg-sidebar m-4 bg-gray-100 p-4">
             <div class="flex flex-col md:flex-row">
-                <!-- Left column (50%) -->
+                <!-- Kolom kiri -->
                 <div class="w-full p-2 md:w-1/2">
                     <div class="flex flex-col gap-4">
-                        <button @click="incrementCount">Count {{ state.count }}</button>
-                        <input id="firstName" type="text" placeholder="First Name" class="rounded border p-2" />
-                        <input id="lastName" type="text" placeholder="Last Name" class="rounded border p-2" />
-                        <button @click="click" class="rounded bg-white px-4 py-2 text-black">Click</button>
-                        <p class="m-auto text-2xl">Hello {{ fullName }}</p>
+                        <button class="rounded-4xl bg-white p-2 text-black" @click="count++">Count {{ count }}</button>
+                        <input type="text" placeholder="First Name" class="rounded border p-2" v-model="form.firstName" />
+                        <input type="text" placeholder="Last Name" class="rounded border p-2" v-model="form.lastName" />
+                        <button class="rounded bg-white px-4 py-2 text-black" @click="handleSubmit">Submit</button>
+                        <div v-if="fullName">Halo, {{ fullName }}</div>
                     </div>
                 </div>
-                <!-- Right column (50%) -->
+
+                <!-- Kolom kanan -->
                 <div class="w-full p-2 md:w-1/2">
                     <div class="flex flex-col gap-4"></div>
                 </div>
