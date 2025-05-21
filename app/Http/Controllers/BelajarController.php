@@ -29,5 +29,8 @@ class BelajarController extends Controller
     {
         return inertia('Score');
     }
-
+    public function todolist()
+    {
+        return inertia('Todolist');
+    }
 }
