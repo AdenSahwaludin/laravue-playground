@@ -31,12 +31,12 @@ const formatRupiah = (amount) => {
         <div class="flex flex-col gap-4 p-4">
             <div class="flex items-center justify-between">
                 <h1 class="text-2xl font-semibold">Products</h1>
-                <Link href="/products/create" class="rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"> Add New Product </Link>
+                <Link href="/products/create" class="bg-sidebar rounded-md px-4 py-2 text-white hover:bg-gray-900"> Add New Product </Link>
             </div>
 
-            <div class="overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-700">
-                <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                    <thead class="bg-gray-50 dark:bg-gray-800">
+            <div class="dark:border-sidebar overflow-x-auto rounded-lg border border-gray-200">
+                <table class="min-w-full divide-y divide-gray-200 dark:divide-black">
+                    <thead class="dark:bg-sidebar bg-gray-50">
                         <tr>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase dark:text-gray-400">
                                 Image
@@ -58,8 +58,8 @@ const formatRupiah = (amount) => {
                             </th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-gray-200 bg-white dark:divide-gray-700 dark:bg-gray-900">
-                        <tr v-for="product in products.data" :key="product.id" class="hover:bg-gray-50 dark:hover:bg-gray-800">
+                    <tbody class="dark:bg-sidebar divide-y divide-gray-200 bg-white dark:divide-gray-700">
+                        <tr v-for="product in products.data" :key="product.id" class="hover:bg-gray-50 dark:hover:bg-gray-900">
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div v-if="product.image_path" class="h-10 w-10 overflow-hidden rounded-full">
                                     <img :src="`/storage/${product.image_path}`" alt="Product image" class="h-full w-full object-cover" />
@@ -126,7 +126,7 @@ const formatRupiah = (amount) => {
             </div>
 
             <!-- Pagination Links -->
-            <div class="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6 dark:border-gray-700 dark:bg-gray-900">
+            <div class="dark:bg-sidebar flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6 dark:border-black">
                 <div class="flex flex-1 justify-between sm:hidden">
                     <Link
                         v-if="products.prev_page_url"
@@ -164,9 +164,9 @@ const formatRupiah = (amount) => {
                                 v-html="link.label"
                                 class="relative inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
                                 :class="{
-                                    'border-blue-500 bg-blue-50 text-blue-600': link.active,
+                                    'border-gray-300 bg-blue-50 text-gray-900': link.active,
                                     'cursor-not-allowed opacity-50': !link.url,
-                                    'z-10 border-indigo-500 bg-indigo-50 text-indigo-600': link.active,
+                                    'z-10 border-gray-300 bg-indigo-50 text-gray-900': link.active,
                                 }"
                             />
                         </nav>
