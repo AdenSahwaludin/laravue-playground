@@ -67,10 +67,10 @@ const formatRupiah = (amount) => {
                 </div>
             </div>
 
-            <div class="overflow-hidden rounded-lg bg-white shadow dark:bg-gray-800">
+            <div class="dark:bg-sidebar overflow-hidden rounded-lg bg-white shadow">
                 <div class="md:flex">
                     <div class="p-4 md:w-1/3">
-                        <div class="aspect-square w-full overflow-hidden rounded-md bg-gray-100 dark:bg-gray-700">
+                        <div class="aspect-square w-full overflow-hidden rounded-md bg-gray-100 dark:bg-gray-900">
                             <img
                                 v-if="product.image_path"
                                 :src="`/storage/${product.image_path}`"
